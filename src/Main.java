@@ -1,4 +1,6 @@
-abstract class Person {
+import java.io.Serializable;
+
+abstract class Person implements Serializable {
     protected String name;
     protected int age;
 
@@ -30,13 +32,10 @@ class Student extends Person {
     public void displayInfo() {
         System.out.println("Student:");
         System.out.println("Name: " + name + ", Age: " + age);
-
         System.out.print("Grades: ");
         for (int g : grades) System.out.print(g + " ");
-
         System.out.print("\nSubjects: ");
         for (String s : subjects) System.out.print(s + " ");
-
         System.out.println("\nAverage grade: " + getAverageGrade());
     }
 }
